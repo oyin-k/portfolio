@@ -4,7 +4,7 @@
   "description": "Portfolio site built with HTML and SASS. Hosted on Netlify.",
   "main": "index.js",
   "scripts": {
-    "compile-sass": "node-sass ./sass/main.scss  ./css/main.css"
+    "compile-sass": "node-sass src/sass/main.scss dist/css/main.css -w"
   },
   "repository": {
     "type": "git",
