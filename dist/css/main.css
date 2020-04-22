@@ -5,17 +5,17 @@
 
 body {
   font-size: 1rem;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   box-sizing: border-box;
   color: #fff;
-  background-color: #151515; }
+  background-color: #151515;
+  line-height: 1.6; }
 
 #header {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center; }
-  #header #nav-bar {
+  #header #navbar {
     position: fixed;
     top: 0;
     display: flex;
@@ -27,129 +27,157 @@ body {
     backdrop-filter: saturate(180%) blur(5px);
     border-bottom: 1px solid #353535;
     z-index: 100; }
-    #header #nav-bar .logo {
+    #header #navbar .logo {
       height: 100%;
       padding-left: 2rem;
       display: flex;
       align-items: center; }
-      #header #nav-bar .logo #header-img {
+      #header #navbar .logo #header-img {
         height: 1.2rem; }
-    #header #nav-bar .links {
+    #header #navbar .links {
       display: flex;
       justify-content: center;
       width: 100%; }
-    #header #nav-bar .links ul {
+    #header #navbar .links ul {
       display: flex;
       justify-content: center; }
-      #header #nav-bar .links ul li {
+      #header #navbar .links ul li {
         list-style-type: none;
         padding: 0 1rem; }
-      #header #nav-bar .links ul a {
+      #header #navbar .links ul a {
         text-decoration: none;
         color: #fff; }
-  #header #landing {
-    margin-top: 5rem;
+  #header #welcome-section {
+    margin-top: 13rem;
     display: flex;
+    height: 100vh;
     justify-content: center;
     text-align: center; }
-    #header #landing h1 {
+    #header #welcome-section h1 {
       font-size: 3rem;
       margin-bottom: 1rem; }
-    #header #landing p {
+    #header #welcome-section p {
       margin-bottom: 2.5rem; }
-    #header #landing .landing-text {
+    #header #welcome-section .landing-text {
       max-width: 42rem;
       margin-bottom: 2rem; }
-      #header #landing .landing-text__top {
+      #header #welcome-section .landing-text__top {
         font-size: 2.5rem;
         text-transform: uppercase;
         color: #949495; }
-      #header #landing .landing-text__bottom {
+      #header #welcome-section .landing-text__bottom {
         display: block;
         text-transform: uppercase; }
-      #header #landing .landing-text p {
+      #header #welcome-section .landing-text p {
         margin: 0 auto 2.5rem;
         width: 37rem;
         line-height: 1.6;
         color: #949495; }
-        #header #landing .landing-text p .profile-highlight {
+        #header #welcome-section .landing-text p .profile-highlight {
           color: #fff; }
-      #header #landing .landing-text .cta #email, #header #landing .landing-text .cta #submit {
+      #header #welcome-section .landing-text .cta #email,
+      #header #welcome-section .landing-text .cta #submit {
         border-radius: 6px;
         font-size: 0.875rem; }
-      #header #landing .landing-text .cta #email {
-        padding: .8rem .8rem;
+      #header #welcome-section .landing-text .cta #email {
+        padding: 0.8rem 0.8rem;
         width: 50%;
         border: none;
         background-color: #f3f3f4; }
-      #header #landing .landing-text .cta #submit {
-        padding: .8rem 1.5rem;
+      #header #welcome-section .landing-text .cta #submit {
+        padding: 0.8rem 1.5rem;
         border: none;
         background-color: #fff;
         color: #151515; }
 
 main #projects {
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; }
-  main #projects .project {
-    background-color: #949495;
-    width: 46%;
-    height: 21rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.05);
-    margin-bottom: 7rem;
-    border-radius: 6px;
-    position: relative; }
-    main #projects .project__name {
-      position: absolute;
-      bottom: -48px; }
+  padding: 0 2rem; }
+  main #projects .project-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+    @media (max-width: 700px) {
+      main #projects .project-list {
+        flex-wrap: nowrap;
+        flex-direction: column; } }
+    main #projects .project-list .project-tile {
+      width: 46%;
+      height: 21rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 10rem;
+      border-radius: 6px;
+      position: relative; }
+      main #projects .project-list .project-tile .project__link {
+        text-decoration: none;
+        color: #949495;
+        transition: color 0.2s ease-in-out; }
+        main #projects .project-list .project-tile .project__link:hover {
+          cursor: pointer;
+          color: #fff; }
+      main #projects .project-list .project-tile .project__name {
+        position: absolute;
+        bottom: -48px; }
+    main #projects .project-list .social-media {
+      background-image: url("https://firebasestorage.googleapis.com/v0/b/portfoliov1-114c2.appspot.com/o/desktop-design-dark.jpg?alt=media&token=7762284d-3efb-4a2c-96d5-eca2a65a266d");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; }
+    main #projects .project-list .coming-soon {
+      background-image: url("https://firebasestorage.googleapis.com/v0/b/portfoliov1-114c2.appspot.com/o/desktop-preview.jpg?alt=media&token=2f63bd61-a5ef-4b15-b24b-568defe21447");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; }
+    main #projects .project-list .ozil {
+      background-image: url("https://firebasestorage.googleapis.com/v0/b/portfoliov1-114c2.appspot.com/o/ozil_design.jpg?alt=media&token=0bc10d26-91d2-4366-b261-20995a5cf4e2");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; }
+    main #projects .project-list .stressless {
+      background-image: url("https://firebasestorage.googleapis.com/v0/b/portfoliov1-114c2.appspot.com/o/stressless.png?alt=media&token=d00d1621-b769-4666-bb12-d9ba1c9dc95e");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; }
 
-main #mvps {
-  background-color: #f3f3f4;
-  padding: 0 2rem;
-  margin-bottom: 7rem;
+main .section-heading-box {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2.5rem; }
+
+main .section-heading-text {
+  font-weight: normal;
   color: #949495; }
-  main #mvps .super-bowl-mvp {
-    display: flex;
-    justify-content: space-between; }
-  main #mvps .nfl-mvp {
-    display: flex;
-    justify-content: space-around; }
-  main #mvps .mvp, main #mvps .nfl {
-    font-size: 1.2rem;
-    padding: 1rem .875rem;
-    transition: color 0.2s; }
-  main #mvps .mvp:hover, main #mvps .nfl:hover {
-    color: #151515; }
 
-main #super-bowl-wins {
-  display: flex;
+main #articles {
   padding: 0 2rem;
   margin-bottom: 5rem; }
-  main #super-bowl-wins .super-bowl-win {
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 6px;
-    width: 13rem;
-    margin: 0 .4rem; }
-    main #super-bowl-wins .super-bowl-win .super-bowl-img {
-      height: 9rem;
-      border-radius: 6px;
-      margin: .875rem .6rem;
-      background-color: #f3f3f4; }
-      main #super-bowl-wins .super-bowl-win .super-bowl-img img {
-        width: 100%;
-        max-width: 100%;
-        height: fill-available;
-        border-radius: 6px;
-        object-fit: cover; }
-    main #super-bowl-wins .super-bowl-win .super-bowl-description {
-      padding: .875rem .6rem; }
-      main #super-bowl-wins .super-bowl-win .super-bowl-description h4 {
-        font-size: .875rem;
-        margin-bottom: .4rem; }
-      main #super-bowl-wins .super-bowl-win .super-bowl-description p {
-        font-size: .875rem;
-        opacity: 0.6; }
+  main #articles .article-list {
+    display: flex;
+    justify-content: space-between; }
+    main #articles .article-list .article {
+      width: 32%;
+      transition: background-color 0.2s ease-in-out;
+      padding: 1.5rem 0.8rem;
+      border-radius: 6px; }
+      main #articles .article-list .article a {
+        text-decoration: none;
+        color: #fff; }
+      main #articles .article-list .article__title {
+        margin-bottom: 0.8rem;
+        color: #f3f3f4; }
+      main #articles .article-list .article__highlight {
+        font-size: 0.8rem;
+        color: #949495; }
+      main #articles .article-list .article:hover {
+        background-color: #202022; }
+
+main #contact-me {
+  color: #949495;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem; }
+  main #contact-me .social-link {
+    padding: 0 0.8rem; }
+    main #contact-me .social-link a {
+      text-decoration: none;
+      color: #949495; }
