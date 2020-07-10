@@ -1,17 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
-
-// social media switcher https://firebasestorage.googleapis.com/v0/b/portfoliov1-114c2.appspot.com/o/desktop-design-dark.jpg?alt=media&token=7762284d-3efb-4a2c-96d5-eca2a65a266d
-
-// coming https://firebasestorage.googleapis.com/v0/b/portfoliov1-114c2.appspot.com/o/desktop-preview.jpg?alt=media&token=2f63bd61-a5ef-4b15-b24b-568defe21447
-
-// ddribbble shot https://firebasestorage.googleapis.com/v0/b/portfoliov1-114c2.appspot.com/o/ozil_design.jpg?alt=media&token=0bc10d26-91d2-4366-b261-20995a5cf4e2
-
-// stressless https://firebasestorage.googleapis.com/v0/b/portfoliov1-114c2.appspot.com/o/stressless.png?alt=media&token=d00d1621-b769-4666-bb12-d9ba1c9dc95e
-
-// social-media
-//coming-soon
-//ozil
-//stressless
+@import 'abstracts/mixins';
 
 $color-grey: #f3f3f4;
 $color-grey-2: #949495;
@@ -31,6 +19,10 @@ body {
   color: $color-white;
   background-color: $color-black;
   line-height: 1.6;
+
+  @include responsive(phone-port) {
+    padding: 0 1.25rem;
+  }
 }
 
 #header {
@@ -48,6 +40,7 @@ body {
     padding: 1rem 0;
     background-color: transparent;
     backdrop-filter: saturate(180%) blur(5px);
+    -moz-backdrop-filter: saturate(180%) blur(5px);
     border-bottom: 1px solid #353535;
     z-index: 100;
 
@@ -86,14 +79,23 @@ body {
 
   #welcome-section {
     margin-top: 13rem;
+    margin-bottom: 5rem;
     display: flex;
-    height: 100vh;
     justify-content: center;
     text-align: center;
+
+    @include responsive(phone-port) {
+      margin-top: 8rem;
+      height: auto;
+    }
 
     h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
+
+      @include responsive(phone-port) {
+        font-size: 2rem;
+      }
     }
 
     p {
@@ -103,6 +105,10 @@ body {
     .landing-text {
       max-width: 42rem;
       margin-bottom: 2rem;
+
+      @include responsive(phone-port) {
+        max-width: 100%;
+      }
 
       &__top {
         font-size: 2.5rem;
@@ -120,6 +126,11 @@ body {
         width: 37rem;
         line-height: 1.6;
         color: $color-grey-2;
+
+        @include responsive(phone-port) {
+          width: 100%;
+          font-size: 1rem;
+        }
 
         .profile-highlight {
           color: $color-white;
@@ -154,6 +165,10 @@ body {
 main {
   #projects {
     padding: 0 2rem;
+    
+    @include responsive(phone-port) {
+      padding: 0;
+    }
 
     .project-list {
       display: flex;
@@ -165,6 +180,11 @@ main {
          flex-direction: column;
       }
 
+      @include responsive(phone-port) {
+        flex-wrap: wrap;
+         flex-direction: row;
+      }
+
       .project-tile {
         width: 46%;
         height: 21rem;
@@ -173,6 +193,11 @@ main {
         margin-bottom: 10rem;
         border-radius: 6px;
         position: relative;
+
+        @include responsive(phone-port) {
+          height: 16rem;
+          margin-bottom: 8rem;
+        }
 
         .project {
             &__link {
@@ -189,9 +214,27 @@ main {
               &__name {
                 position: absolute;
                 bottom: -48px;
+
+                @include responsive(phone-port) {
+                  bottom: -82px;
+                  font-size: 1.25rem;
+                }
               }
         }
 
+      }
+
+      .ozil,
+      .stressless {
+        @include responsive(phone-port) {
+          margin-bottom: 10rem;
+        }
+      }
+      .budget-me {
+        background-image: url("https://firebasestorage.googleapis.com/v0/b/portfoliov1-114c2.appspot.com/o/Screenshot%202020-07-10%20at%2002.46.40.png?alt=media&token=188d8109-36ac-46ba-b098-dbaf32ce3540");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
       }
       .social-media {
         background-image: url("https://firebasestorage.googleapis.com/v0/b/portfoliov1-114c2.appspot.com/o/desktop-design-dark.jpg?alt=media&token=7762284d-3efb-4a2c-96d5-eca2a65a266d");
@@ -238,15 +281,29 @@ main {
     padding: 0 2rem;
     margin-bottom: 5rem;
 
+    @include responsive(phone-port) {
+      padding: 0;
+    }
+
     .article-list {
       display: flex;
       justify-content: space-between;
+
+      @include responsive(phone-port) {
+        width: 100%;
+        flex-direction: column;
+      }
 
       .article {
         width: 32%;
         transition: background-color 0.2s ease-in-out;
         padding: 1.5rem 0.8rem;
         border-radius: 6px;
+
+        @include responsive(phone-port) {
+          width: auto;
+          text-align: center;
+        }
 
         a {
           text-decoration: none;
